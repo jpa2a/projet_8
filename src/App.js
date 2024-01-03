@@ -1,67 +1,28 @@
 import './App.scss';
-import { RouterProvider, createBrowserRouter, NavLink, Outlet } from 'react-router-dom';
-import {Location} from "./locations.jsx";
-const router = createBrowserRouter([
-{
-  path: '/',
-  element : <Root/>,
-  errorElement: <Page404/>,
-  children: [
-    {
-      path: '',
-      element : <Location/>,
-      loader: () => fetch('json/logements.json')
-    
-    },
-    
-    {
-      path: 'apropos',
-      element : <div>a propos</div>
-    
-    }
+import { Routes, Route } from 'react-router-dom';
+import {Locations} from "./pages/locations.js";
+import {Location} from "./pages/location.js";
+import {Location2} from "./pages/location.js";
+import {Apropos} from "./pages/apropos.js"
+import {Page404} from "./pages/page404.js"
+import {Header} from "./pages/header.js"
+import {Footer} from "./pages/footer.js"
 
 
-  ]
-},
 
-])
-
-function Page404(){
-  return <>
-   <div className='container'>
-      <header>
-          <img src='images/logo/LOGO.svg' alt='Logo'/>
-            <nav>
-              <NavLink to='/' className='navBtn'>Acceuil</NavLink>
-              <NavLink to='/apropos' className='navBtn'>A propos</NavLink>
-            </nav>
-      </header>
-      <div> <h1>PAGE 404</h1></div>
-      
-    </div>
-   
-  </>
-}
-
-function Root (){
-  return <>
-    <div className='container'>
-      <header>
-          <img src='images/logo/LOGO.svg' alt='Logo'/>
-            <nav>
-              <NavLink to='/' className='navBtn'>Acceuil</NavLink>
-              <NavLink to='/apropos' className='navBtn'>A propos</NavLink>
-            </nav>
-      </header>
-      <div><Outlet/></div>
-      
-    </div>
-  </>
-}
 
 function App() {
   return (
-   <RouterProvider router={router} />
+    <div className='container'>
+      <Header />
+    <Routes>
+      <Route path="/" element={<Locations />} />
+      <Route path="/loca/:id" element={<Location2 />} />
+      <Route path="apropos" element={<Apropos />}/>
+      <Route path="*" element={<Page404 />}/>
+    </Routes>
+    <Footer />
+   </div>
   );
 }
 
