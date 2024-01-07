@@ -121,16 +121,17 @@ header{
     max-height: 0;
     /*  height: 0px;   */
     overflow: hidden;
-    transition: max-height 500ms ease;
-    
-    
+    transition: all 1000ms ease;
     margin-bottom: 1.88rem;
+    & p{
+      margin-inline: 0.5rem;
+    }
     &--show{
       background-color: #f6f6f6;
-     /*  height: 170px; */
-      max-height: 300px; 
+      
+      max-height: 250px; 
       overflow: hidden;
-      transition: max-height 1000ms ease;
+      transition: all 1000ms ease;
      
     }
   }

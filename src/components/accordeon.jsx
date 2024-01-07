@@ -21,11 +21,14 @@ const accordeonData = [
 
 
 
-export function Accordeon(){
-
+export function Accordeon(props){
+    
     const toggle = i => {
         if (selected == i ){
+
+            console.log(props.data)
             return setSelected(null)
+          
         }
         setSelected(i)
     
@@ -33,10 +36,10 @@ export function Accordeon(){
     const [selected, setSelected] = useState(null);
     return <>
     <div className="section">
-        {accordeonData.map((section, i) => (
+        {props.data.map((section, i) => (
             <div>
-                <div className="section__title" onClick={() => toggle(i)}>
-                    <h2>{section.title}</h2>
+                <div key={i}  className="section__title" onClick={() => toggle(i)}>
+                    <h2>{section.title}{selected}</h2>
                     
                     <span><img className={selected === i ? 'arrow--bottom' : 'arrow--top'} src="../images/logo/arrow_back.svg" /></span>
                 </div>

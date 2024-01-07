@@ -51,22 +51,13 @@ export function Location2(){
 
    
 
-    const { id } = useParams()
-    const test = "test";  
+    const { id } = useParams() 
     return <>
          {
         data.map((data,i) => (
                 
              data.id == id ? (
 
-
-          
-             
-            
-             
-            
-
-            
             <div className="ficheAppart">
                 <div className="carroussel"></div>
                 <div className="infos">
@@ -81,8 +72,8 @@ export function Location2(){
                     <div className="tags__stars"></div>
                 </div>
                 <div className="menu">
-                    <div className="menu__description"><Accordeon2 title="Description" text={data.description} /></div>
-                    <div className="menu__equipements"><Accordeon2 title="Equipements" text={
+                    <div className="menu__description"><Accordeon2 index="0"  title="Description" text={data.description} /></div>
+                    <div className="menu__equipements"><Accordeon2 index="1"  title="Equipements" text={
                         data.equipments.map((item, index) => {
                             if (index === 0) {
                                 return <>{item}</>
