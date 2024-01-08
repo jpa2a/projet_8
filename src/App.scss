@@ -8,6 +8,10 @@ body{
   font-family: Montserrat; 
 }
 
+*{
+  font-family: Montserrat; 
+}
+
 header{
   padding-top: 2.81rem;
   display: flex;
@@ -159,22 +163,26 @@ header{
   background: #F6F6F6; 
   padding-block: 1.56rem;
   margin-bottom: 1.88rem;
+  
 }
 
 .loca{
   display: flex;
   align-items:end;
-  width: 27%;
-  height: 150px;
   border-radius: 0.625rem;
-  background: linear-gradient(180deg, rgba(255, 96, 96, 0.90) 0%, rgb(160, 61, 61) 100%);
-  margin-block: 1.56rem;
-  margin-inline: 1.56rem;
-  padding: 0.5rem;
+  /* background: linear-gradient(180deg, rgba(255, 96, 96, 0.90) 0%, rgb(160, 61, 61) 100%); */
+  /* margin-block: 1.56rem;
+  margin-inline: 1.56rem; */
+ 
   &__link{
     color: white;
     text-decoration: none;
     font-size: 1.125rem;
+    font-weight: 500;
+    font-family: Montserrat;
+    font-style: normal;
+    line-height: 142.6%;
+    padding: 0.5rem;
   
   } 
 }
@@ -224,6 +232,7 @@ header{
   &__equipements{
     width: 45%;
     
+    
   }
 }
 
@@ -243,3 +252,113 @@ header{
       font-size: 1.5rem;
       font-weight: 400;
     } */
+
+    .appa{
+      width: 27%;
+      height: 150px;
+      margin: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .appaphoto{
+      top: 0;
+      left: 0;
+      height: 100% ;
+      width: 100%;
+      position: absolute;
+      background-color: aqua;
+      border-radius: 0.625rem;
+      z-index: 4;
+ 
+    }
+    .appaphoto img{
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      border-radius: 0.625rem;
+
+
+
+    }
+
+    .loca{
+      position: relative;
+      /* background-color: #FF6060; */
+      height: 100%;
+      width: 100%;
+      z-index: 5;
+    }
+
+    .slider{
+      display: flex;
+      align-items: center;
+      position: relative;
+      width: 80%;
+      height: 300px;
+      background-color: #FF6060;
+      color: black;
+      overflow: hidden; 
+        & img{
+          object-fit: cover;   
+          transition: all 1s ease ;    
+        }
+      
+      &__btn{
+        position: absolute;
+        cursor: pointer;
+        
+        & img{
+          height: 50px;
+        }
+        &--left{
+          left: 0;
+          
+         
+        }
+        &--right{
+          right: 0;
+        }
+      }
+    }
+
+    .listTags{
+      display: flex;
+      width: 20%;
+    }
+
+
+    .tags{
+      display: flex;
+     
+     color: white;
+     background-color: #FF6060;
+     white-space: nowrap;
+     padding: 0.3rem 1.5rem;
+     margin-right: 0.5rem;
+     margin-block: 0.5rem;
+     border-radius: 0.62rem;
+    }
+
+    .grey{
+
+      color: grey;
+    }
+
+    .tagsAndVignettes{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .name{
+      display: flex;
+      width: 100px;
+      white-space: wrap;
+      margin: 0.5rem;
+
+    }
+    .name span{
+     
+      text-align: end;
+      
+
+    }

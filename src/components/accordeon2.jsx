@@ -8,7 +8,7 @@ export function Accordeon2(props){
   //  const [selected, setSelected] = useState(null);
     return <>
     <div>
-            <div>
+            <div style={{width: "60%"}}>
                 <div key={props.index} className="section__title" >
                     <h2>{props.title}{props.select}</h2>
                     

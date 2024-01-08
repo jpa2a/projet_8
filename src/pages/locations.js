@@ -9,10 +9,13 @@ export function Locations(){
     <div className="locaList">
         {
         data.map((data,i) => (
+            <div className="appa"  key={i}>
             <div className="loca" key={data.id}>
 
                 <NavLink className="loca__link" to={`/loca/${data.id}`}>{data.title}</NavLink>
 
+            </div>
+            <div className="appaphoto"><img src={data.cover} alt="appartement"></img></div>
             </div>
 
         ))

@@ -37,13 +37,13 @@ export function Accordeon(props){
     return <>
     <div className="section">
         {props.data.map((section, i) => (
-            <div>
-                <div key={i}  className="section__title" onClick={() => toggle(i)}>
-                    <h2>{section.title}{selected}</h2>
+            <div key={i}>
+                <div className="section__title" onClick={() => toggle(i)}>
+                    <h2>{props.title ? props.title : section.title }{selected}</h2>
                     
                     <span><img className={selected === i ? 'arrow--bottom' : 'arrow--top'} src="../images/logo/arrow_back.svg" /></span>
                 </div>
-                <div className={selected === i ? 'section__content section__content--show' : 'section__content'}><p>{section.content}</p></div>
+                <div className={selected === i ? 'section__content section__content--show' : 'section__content'}><p>{props.text ? props.text : section.content }</p></div>
             </div>
         ))}
       </div>  

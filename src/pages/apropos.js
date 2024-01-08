@@ -37,13 +37,13 @@ export function Apropos(){
     return <>
         <div className="banner2"></div>
         <Accordeon data={accordeonData} />
-        {accordeonData.map((section, i) => (
+       {/*  {accordeonData.map((section, i) => (
             
            <div  onClick={() => toggle(i)} >
             <Accordeon2 index={i} select={selected} title={section.title} text={section.content} />
             </div>
         
-        ))}
+        ))} */}
     </>
   }
  // export default Apropos;
