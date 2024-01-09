@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom"
 import { NavLink } from "react-router-dom"
-import { Accordeon2 } from "../components/accordeon2"
 import { Accordeon } from "../components/accordeon"
 import { Slider } from "../components/slider"
 import { Tags } from "../components/tags"

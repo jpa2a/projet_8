@@ -5,8 +5,8 @@ import {Location} from "./pages/location.js";
 import {Location2} from "./pages/location.js";
 import {Apropos} from "./pages/apropos.js"
 import {Page404} from "./pages/page404.js"
-import {Header} from "./pages/header.js"
-import {Footer} from "./pages/footer.js"
+import {Header} from "./components/header.js"
+import {Footer} from "./components/footer.js"
 
 
 

@@ -1,5 +1,4 @@
 import { Accordeon } from "../components/accordeon"
-import { Accordeon2 } from "../components/accordeon2"
 import { useState } from "react";
 const accordeonData = [
     {
