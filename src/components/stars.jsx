@@ -17,7 +17,7 @@ export function Stars({data}){
       }
 
     return <>
-    <div className="listTags">
+    <div className="stars">
         {starNum.map((section, i) => (      
 
             section == 1 ? <i class="fa-solid fa-star"></i> : <i class="fa-solid fa-star grey"></i> 

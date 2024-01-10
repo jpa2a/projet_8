@@ -1,5 +1,4 @@
 import { Accordeon } from "../components/accordeon"
-import { useState } from "react";
 const accordeonData = [
     {
         title: "Fiabilité",
@@ -22,27 +21,12 @@ const accordeonData = [
 
 export function Apropos(){
     
-    const toggle = i => {
-        if (selected == i ){
-            console.log("re " + selected)
-            console.log("test " + i)
-            return setSelected(null)
-        }
-        setSelected(i)
-    }
-
-    const [selected, setSelected] = useState(null);
 
     return <>
-        <div className="banner2"></div>
+        <div className="banner banner__apropos"></div>
+        <div className="accordeon-container">
         <Accordeon data={accordeonData} />
-       {/*  {accordeonData.map((section, i) => (
-            
-           <div  onClick={() => toggle(i)} >
-            <Accordeon2 index={i} select={selected} title={section.title} text={section.content} />
-            </div>
-        
-        ))} */}
+        </div>
     </>
   }
- // export default Apropos;
+ 
