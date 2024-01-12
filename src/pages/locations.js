@@ -9,9 +9,9 @@ export function Locations(){
     <div className="locaList">
         {
         data.map((data,i) => (
-            <Link className="locaList__vignette" to={`/loca/${data.id}`}  style={{ textDecoration: 'none' }}>
+            <Link  key={data.id} className="locaList__vignette" to={`/loca/${data.id}`}  style={{ textDecoration: 'none' }}>
             
-            <div className="locaList__title" key={data.id}>
+            <div className="locaList__title">
                 <p>{data.title}</p>
 
             </div>

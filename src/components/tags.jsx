@@ -2,10 +2,10 @@
 export function Tags({data}){
     
     return <>
-    <div className="listTags">
+    <div className="tags">
      {data.map((section, i) => (      
 
-        <div className="tags">{section}</div>
+        <div key={i} className="tags__list">{section}</div>
 
 ))} 
     </div>

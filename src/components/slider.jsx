@@ -2,30 +2,21 @@ import { useState } from "react";
 
   export function Slider({data}){
 
-    console.log(data[0])
-    console.log(data.length)
-
-    function prevPic(){
-        setImgIndex(index => {
-            if (index === 0) return data.length - 1
-            return index - 1
-
-        })
-    
-    
-    }
+        function prevPic(){
+            setImgIndex(index => {
+                if (index === 0) return data.length - 1
+                return index - 1
+            })
+        }
 
     
-function nextPic(){
+        function nextPic(){
 
-    setImgIndex(index => {
-        if (index === data.length - 1) return 0
-        return index + 1
-
-    })
-
-
-}
+            setImgIndex(index => {
+                if (index === data.length - 1) return 0
+                return index + 1
+            })
+        }
 
     
 
@@ -37,7 +28,7 @@ function nextPic(){
                 
        {data.map((section, i) => (      
                
-                <img  className="imgSlider"  src={section} alt="" style={{ translate: `${-100 * imgIndex}%` }} ></img>
+                <img key={i}  className="slider__img"  src={section} alt="" style={{ translate: `${-100 * imgIndex}%` }} ></img>
                 
         ))} 
                 <div className="slider__btn slider__btn--left"  onClick={() => prevPic()}><img src="/images/arrow_left.png"></img></div>

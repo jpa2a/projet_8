@@ -25,7 +25,7 @@ export function Apropos(){
     return <>
         <div className="banner banner__apropos"></div>
         <div className="accordeon-container">
-        <Accordeon data={accordeonData} />
+        <Accordeon index="0" data={accordeonData} />
         </div>
     </>
   }
