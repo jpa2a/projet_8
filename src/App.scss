@@ -126,65 +126,6 @@ header{
   }
 }
 
-/* menu deroulant */
-
-.accordeon{
-  width: 95%;
-  @media (max-width: 768px) {
-    width: 100%;
-   }
-  &__title{
-    background-color: #FF6060;
-    color: white;
-    border-radius: 0.3125rem; 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    & h2{
-      margin: 0.5rem;
-      font-size: 1.5rem;
-      font-weight: 400;
-    }
-  }
-
-  &__btn{
-    cursor: pointer;
-  }
-  &__content{
-    display: flex;
-    align-items: center;
-    background-color: #f6f6f6;
-    color: #FF6060;
-    border-radius: 0.3125rem;
-    font-size: 1rem;
-    height: auto;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 1000ms ease;
-    margin-bottom: 1.88rem;
-    & p{
-      margin-inline: 0.5rem;
-    }
-    &--show{
-      background-color: #f6f6f6;
-      
-      max-height: 250px; 
-      overflow: hidden;
-      transition: all 1000ms ease;
-     
-    }
-  }
-  &__arrow--top{
-    margin-right: 0.5rem;
-    transform: rotate(180deg);
-    transition: all 500ms ease;
-  }
-  &__arrow--bottom{
-    margin-right: 0.5rem;
-    transition: all 500ms ease;
-  }
-}
-
 
 
 /* liste locations */
@@ -291,9 +232,16 @@ header{
           font-weight: 500; 
           margin-bottom: 0;
           margin-top: 1.5rem;
+          @media (max-width: 768px) {
+            font-size: 1.125rem;
+           }
         }
         & p{
           margin-top: 0.5rem;
+          font-size: 1.125rem;
+          @media (max-width: 768px) {
+            font-size: 0.87rem;
+           }
         }
       }
      }
@@ -352,20 +300,11 @@ header{
     grid-auto-rows: 52px auto;
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
+      grid-auto-rows: 40px auto;
     }
   }
 }
 
- /* a propos */
-
- .accordeon-container{
-  display: flex;
-  justify-content: center;
-  width: 60%;
-  @media (max-width: 768px) {
-    width: 80%;
-   }
- }
 
 
 /* tags */
@@ -428,13 +367,14 @@ header{
       position: relative;
       width: 100%;
       height: 100%;
-      color: black;
+      color: white;
       border-radius: 35px;
       overflow: hidden;
       &__btn{
         position: absolute;
         cursor: pointer;
         margin: 0.3rem;
+       
         
         & img{
           height: 50px;
@@ -459,7 +399,18 @@ header{
     flex-grow: 0;
       } 
     }
- 
+
+    .counter{
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      text-shadow: 1px 1px 0px black;
+      @media (max-width: 768px) {
+        display: none;
+       }
+
+    }
+
     /* accordeon.jsx */
 
     
@@ -470,10 +421,17 @@ header{
         align-items: center;
         color: white;
         border-radius: 0.31rem;
+        @media (max-width: 768px) {
+          height: 40px;
+         }
         & h2{
           margin: 0.5rem;
           font-size: 1.5rem;
           font-weight: 400;
+          @media (max-width: 768px) {
+            
+            font-size: 0.81rem;
+           }
         }
         
       }
@@ -484,3 +442,82 @@ header{
       grid-template-rows: subgrid;
       
     }
+
+     /* a propos */
+
+ .accordeon-container{
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  @media (max-width: 768px) {
+    width: 80%;
+   }
+ }
+
+
+    /* menu deroulant */
+
+.accordeon{
+  width: 95%;
+  @media (max-width: 768px) {
+    width: 100%;
+   }
+  &__title{
+    background-color: #FF6060;
+    color: white;
+    border-radius: 0.3125rem; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    & h2{
+      margin: 0.5rem;
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+  }
+
+  &__btn{
+    cursor: pointer;
+  }
+  &__content{
+    display: flex;
+    align-items: center;
+    background-color: #f6f6f6;
+    color: #FF6060;
+    border-radius: 0.3125rem;
+    font-size: 1rem;
+    height: auto;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 1000ms ease;
+    margin-bottom: 1.88rem;
+    & p{
+      margin-inline: 0.5rem;
+      
+       
+        @media (max-width: 768px) {
+          
+          font-size: 0.81rem;
+         }
+    }
+    &--show{
+      background-color: #f6f6f6;
+      
+      max-height: 250px; 
+      overflow: hidden;
+      transition: all 1000ms ease;
+     
+    }
+  }
+  &__arrow--top{
+    margin-right: 0.5rem;
+    transform: rotate(180deg);
+    transition: all 500ms ease;
+  }
+  &__arrow--bottom{
+    margin-right: 0.5rem;
+    transition: all 500ms ease;
+  }
+}
+
+

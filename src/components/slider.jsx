@@ -18,7 +18,13 @@ import { useState } from "react";
             })
         }
 
-    
+        function compteur(i){
+            if (i > 1){
+                return <> 
+                {imgIndex + 1}/{i}
+                </>
+            }
+        }
 
 
     
@@ -27,12 +33,16 @@ import { useState } from "react";
       <div className="slider">
                 
        {data.map((section, i) => (      
-               
+              
                 <img key={i}  className="slider__img"  src={section} alt="" style={{ translate: `${-100 * imgIndex}%` }} ></img>
                 
+                
+
         ))} 
-                <div className="slider__btn slider__btn--left"  onClick={() => prevPic()}><img src="/images/arrow_left.png"></img></div>
-                <div className="slider__btn slider__btn--right"  onClick={() => nextPic()}><img src="/images/arrow_right.png"></img></div>
+                <div style={{ display: data.length === 1 && 'none'}} className="slider__btn slider__btn--left"  onClick={() => prevPic()}><img src="/images/arrow_left.png"></img></div>
+                <div style={{ display: data.length === 1 && 'none'}}  className="slider__btn slider__btn--right"  onClick={() => nextPic()}><img src="/images/arrow_right.png"></img></div>
+                <div className="counter"><span>{compteur(data.length)}</span></div>
+                
       </div>
     </>
   }
