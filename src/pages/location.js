@@ -5,12 +5,13 @@ import { Tags } from "../components/tags"
 import { Stars } from "../components/stars"
 import data from '../json/logements.json'
 import React from 'react';
+import { Page404 } from "./page404"
 
 export function Location(){
 
     const { id } = useParams() 
     const location = data.filter((item) => item.id == id)
-    
+    if (location.length !== 0){
     return <>
          {
         location.map((data,i) => (
@@ -34,8 +35,8 @@ export function Location(){
                
 
                  <div className="ficheAppart__grid">
-                    <Accordeon data={location} index={crypto.randomUUID()}  title="Description" text={data.description} />
-                    <Accordeon data={location} index={crypto.randomUUID()}  title="Equipements" text={
+                    <Accordeon data={location} display="grid__element" title="Description" text={data.description} />
+                    <Accordeon data={location} display="grid__element" title="Equipements" text={
                         data.equipments.map((item, index) => {
                             
                             if (index === 0) {
@@ -63,4 +64,8 @@ export function Location(){
         ))
         }   
         </>
+        }
+        else{
+            return <>  <Page404 /> </>
+          }
 }

@@ -1,6 +1,6 @@
 import './App.scss';
 import { Routes, Route } from 'react-router-dom';
-import {Locations} from "./pages/locations.js";
+import {Home} from "./pages/home.js";
 import {Location} from "./pages/location.js";
 import {Apropos} from "./pages/apropos.js"
 import {Page404} from "./pages/page404.js"
@@ -15,7 +15,7 @@ function App() {
     <div className='container'>
       <Header />
     <Routes>
-      <Route path="/" element={<Locations />} />
+      <Route path="/" element={<Home />} />
       <Route path="/loca/:id" element={<Location />} />
       <Route path="apropos" element={<Apropos />}/>
       <Route path="*" element={<Page404 />}/>

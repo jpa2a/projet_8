@@ -16,7 +16,7 @@ import React from 'react';
     }
     const [selected, setSelected] = useState(null);
     return <>
-        <div className="grid__element">
+        <div className={props.display && props.display}>
         {props.data.map((section, i) => (
             <React.Fragment key={i}>
                 <div className="grid__title">
