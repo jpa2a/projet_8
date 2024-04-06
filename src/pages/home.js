@@ -1,9 +1,10 @@
 import {  Link } from "react-router-dom"
-import data from '../json/logements.json'
+import { useData } from "../components/useData";
 
 
 export function Home(){
-    
+    const data = useData("json/logements.json"); 
+    console.log(data)
     return <>
     <div className="banner banner__locations"><p>Chez vous,<br className="returnLign"></br> partout et ailleurs</p></div>
     <div className="locaList">

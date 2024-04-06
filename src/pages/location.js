@@ -3,14 +3,16 @@ import { Accordeon } from "../components/accordeon"
 import { Slider } from "../components/slider"
 import { Tags } from "../components/tags"
 import { Stars } from "../components/stars"
-import data from '../json/logements.json'
+import { useData } from "../components/useData"
 import React from 'react';
 import { Page404 } from "./page404"
 
 export function Location(){
 
+    const data = useData("../json/logements.json"); 
+   
     const { id } = useParams() 
-    const location = data.filter((item) => item.id == id)
+    const location = data.filter((item) => item.id === id)
     if (location.length !== 0){
     return <>
          {
@@ -48,12 +50,6 @@ export function Location(){
                     
                 </div> 
 
-  {/*               <div className="ficheAppart__grid">
-                    <Accordeon data={location} index={crypto.randomUUID()}  title="Description" text={data.description} />
-                    <Accordeon data={location} index={crypto.randomUUID()}  title="Equipements" text={data.equipments} />
-                    
-                </div>
- */}
             </div>
             
             
